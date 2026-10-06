@@ -1,0 +1,30 @@
+==============================================================================
+Question 9 - VM placement with DE, ABC and hybrid GA-PSO
+==============================================================================
+Brute force over 3125 placements: optimum [2, 2, 2, 4, 2] -> 2 servers, 850 W, fitness 2.3862
+DE      30 runs: best [4, 2, 2, 2, 2] fitness 2.3862, success 57%
+ABC     30 runs: best [2, 2, 2, 4, 2] fitness 2.3862, success 87%
+GA-PSO  30 runs: best [4, 2, 2, 2, 2] fitness 2.3862, success 40%
+
+Best placement per algorithm
+
+DE: [4, 2, 2, 2, 2] -> 2 servers, 850 W, feasible=True
+  PM2 (600 W): VM2, VM3, VM4, VM5     CPU 30/32 (94%), RAM 48/64 (75%), BW 8/20 (40%)
+  PM4 (250 W): VM1                    CPU 4/8 (50%), RAM 8/16 (50%), BW 1/5 (20%)
+
+ABC: [2, 2, 2, 4, 2] -> 2 servers, 850 W, feasible=True
+  PM2 (600 W): VM1, VM2, VM3, VM5     CPU 32/32 (100%), RAM 52/64 (81%), BW 8/20 (40%)
+  PM4 (250 W): VM4                    CPU 2/8 (25%), RAM 4/16 (25%), BW 1/5 (20%)
+
+GA-PSO: [4, 2, 2, 2, 2] -> 2 servers, 850 W, feasible=True
+  PM2 (600 W): VM2, VM3, VM4, VM5     CPU 30/32 (94%), RAM 48/64 (75%), BW 8/20 (40%)
+  PM4 (250 W): VM1                    CPU 4/8 (50%), RAM 8/16 (50%), BW 1/5 (20%)
+
+Comparison table
+Algorithm  Best placement   Best servers  Mean servers  Best power (W)  Mean util (%)  Success rate (%)  Evals to optimum (mean)  Runtime (ms, mean)
+---------  ---------------  ------------  ------------  --------------  -------------  ----------------  -----------------------  ------------------
+DE         [4, 2, 2, 2, 2]  2             2.0           850             54.8           56.7              225.1                    166.1             
+ABC        [2, 2, 2, 4, 2]  2             2.0           850             48.5           86.7              525.8                    176.6             
+GA-PSO     [4, 2, 2, 2, 2]  2             2.0           850             54.8           40.0              126.8                    159.3             
+
+Wrote results/summary.csv, report.md, report.pdf, convergence.png, convergence_iterations.png

@@ -1,0 +1,4 @@
+Algorithm,Best placement,Best servers,Mean servers,Best power (W),Mean power (W),CPU util (%),RAM util (%),BW util (%),Mean util (%),Best fitness,Mean fitness,Std fitness,Success rate (%),Evals to optimum (mean),Evals to optimum (median),Iters to optimum (mean),"Runtime (ms, mean)","Runtime (ms, std)"
+DE,"[4, 2, 2, 2, 2]",2,2.0,850,871.7,71.9,62.5,30.0,54.8,2.3862,2.396,0.0113,56.7,225.1,190,11.7,166.1,19.1
+ABC,"[2, 2, 2, 4, 2]",2,2.0,850,856.7,62.5,53.1,30.0,48.5,2.3862,2.3892,0.0077,86.7,525.8,339,26.8,176.6,16.5
+GA-PSO,"[4, 2, 2, 2, 2]",2,2.0,850,888.3,71.9,62.5,30.0,54.8,2.3862,2.4036,0.0163,40.0,126.8,77,6.8,159.3,34.5
